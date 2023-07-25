@@ -7,8 +7,6 @@ services:
       - APP_NAME=Amatsuriki
     ports:
       - 8080
-    volumes:
-      - .:/flask
     depends_on:
       - db
       - redis
