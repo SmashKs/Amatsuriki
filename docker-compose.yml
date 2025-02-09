@@ -5,6 +5,8 @@ services:
     build: ./flask
     environment:
       - APP_NAME=Amatsuriki
+      - DATABASE_URL=postgresql://postgres_n:postgres_p@db:5432/db_name  # DB connection string
+      - REDIS_URL=redis://redis:6379/0  # Redis connection string
     volumes:
       - ./flask:/app
     ports:
@@ -23,7 +25,7 @@ services:
       POSTGRES_USER: postgres_n
       POSTGRES_PASSWORD: postgres_p
     ports:
-      - 5432:5432
+      - "5432:5432"
 
   redis:
     image: redis
